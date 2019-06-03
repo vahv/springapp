@@ -6,12 +6,14 @@ import com.helloworld.springapp.repositories.AuthorRepository;
 import com.helloworld.springapp.repositories.BookRepository;
 import org.springframework.context.ApplicationListener;
 import org.springframework.context.event.ContextRefreshedEvent;
+import org.springframework.stereotype.Component;
 
-public class DevBoostrap implements ApplicationListener<ContextRefreshedEvent> {
+@Component
+public class DevBootstrap implements ApplicationListener<ContextRefreshedEvent> {
     private BookRepository bookRepository;
     private AuthorRepository authorRepository;
 
-    public DevBoostrap(BookRepository bookRepository, AuthorRepository authorRepository) {
+    public DevBootstrap(BookRepository bookRepository, AuthorRepository authorRepository) {
         this.bookRepository = bookRepository;
         this.authorRepository = authorRepository;
     }
